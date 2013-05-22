@@ -14,19 +14,19 @@ Plugin need to load with bootstrap file, that will loads configuration data into
 
 Lets define simplest form with one setting parameter where we will store default site language.
 
-	<?php
-		echo $this->Form->create('Config', array('url' => $this->here));
+    <?php
+        echo $this->Form->create('Config', array('url' => $this->here));
 
-		echo $this->Form->input('Config.Default.language', array(
-			'label' => __('Default language', true)));
-		
-		echo $this->Form->end(__('Save these settings', true));
-	?>
+        echo $this->Form->input('Config.Default.language', array(
+            'label' => __('Default language', true)));
+
+        echo $this->Form->end(__('Save these settings', true));
+    ?>
 
 Please mention that in te edit form need to use value name with "Config." preffx.
 
 Best way to have new setting pages for plugin separated from Configs plugin is use cakephp convantion about plugin views overloading.  So 'default.ctp' edit view page possible to place in app/View/Plugin/Config/Configs folder. After that default settings will available using /admin/config/configs/edit/default url.
-	
+
 ## Configuration usage ###
 
 Configuration values accessible using Configure class. So if you have value Default.language stored in database you will able to read it using Configure::read('Default.language') call.
@@ -45,15 +45,15 @@ Redistributions of files must retain the above copyright notice.
 
 ## Branch strategy ##
 
-The master branch holds the STABLE latest version of the plugin. 
-Develop branch is UNSTABLE and used to test new features before releasing them. 
+The master branch holds the STABLE latest version of the plugin.
+Develop branch is UNSTABLE and used to test new features before releasing them.
 
 Previous maintenance versions are named after the CakePHP compatible version, for example, branch 1.3 is the maintenance version compatible with CakePHP 1.3.
 All versions are updated with security patches.
 
 ## Contributing to this Plugin ##
 
-Please feel free to contribute to the plugin with new issues, requests, unit tests and code fixes or new features. If you want to contribute some code, create a feature branch from develop, and send us your pull request. Unit tests for new features and issues detected are mandatory to keep quality high. 
+Please feel free to contribute to the plugin with new issues, requests, unit tests and code fixes or new features. If you want to contribute some code, create a feature branch from develop, and send us your pull request. Unit tests for new features and issues detected are mandatory to keep quality high.
 
 ## Copyright ###
 
